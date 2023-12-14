@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   # get "lists/:id", to: "lists#show"
   # get "lists/new", to: "lists#new"
   # post "lists", to: "lists#create"
-  
-  resources :lists, only: [:create, :index, :new, :show]
-
+  root to: "lists#index"
+  resources :lists, only: [:create, :index, :new, :show] do
+    resources :bookmarks, only: %i[new create]
+  end
+  resources :bookmarks, only: %i[destroy]
 end
