@@ -1,0 +1,4 @@
+<h2>Your lists</h2>
+<% @lists.each do |list|%>
+<h4><%= link_to list.name, list_path(list.id) %></h4>
+<% end %>
