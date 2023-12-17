@@ -2,6 +2,19 @@
 
 <h4><%= @list.name %></h4>
 
+<% @list.bookmarks.each do |bookmark|%>
+<% @movie = Movie.find(bookmark.movie_id)%>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=<%= @movie.poster_url %> alt="">
+  <div class="card-body">
+    <p class="card-text"><%= @movie.title %></p>
+    <h6><%= bookmark.comment %></h6>
+    <p><%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
+  </div>
+</div>
+<% end %>
+
 <p>l<%= link_to "Back to lists", lists_path%></p>
 
 

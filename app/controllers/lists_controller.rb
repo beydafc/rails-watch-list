@@ -5,6 +5,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @movie = Movie.new
     @bookmark = Bookmark.new
     @list = List.find(params[:id])
   end
@@ -20,6 +21,7 @@ class ListsController < ApplicationController
   end
 
   private
+
   def list_params
   params.require(:list).permit(:name)
   end
