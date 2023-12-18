@@ -1,6 +1,10 @@
-<h2>Welcome to your list!</h2>
+<div class="banner-secondary">
+  <h2 style="padding:20px; text-align:center">Welcome to your list!</h2>
 
-<h4><%= @list.name %></h4>
+  <div class="category-name align-center">
+    <h4 style="text-align:center"><%= @list.name %></h4>
+  </div>
+</div>
 
 <% @list.bookmarks.each do |bookmark|%>
 <% @movie = Movie.find(bookmark.movie_id)%>

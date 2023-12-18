@@ -1,13 +1,17 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2luZW1hfGVufDB8fDB8fHww);" >
-  <div class="container" class="text-white">
-    <h1>Welcome Cinephile!</h1>
-    <p>Personalize your movies</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://c4.wallpaperflare.com/wallpaper/980/458/367/red-chair-room-the-ranks-wallpaper-preview.jpg);">
+  <div class="header">
+    <h1>Welcome to your Movie app!</h1>
   </div>
+    <div class="d-flex justify-content-center mt-3">
+      <%= link_to "Añadir lista nueva", new_list_path, class: "btn btn-ghost" %>
+    </div>
 </div>
 
-<h2>Your lists</h2>
-<% @lists.each do |list|%>
-<h4><%= link_to list.name, list_path(list.id) %></h4>
-<% end %>
+<h2 style="padding:20px; text-align:center"><strong>Your lists</strong></h2>
 
-<%= link_to "Añadir lista nueva", new_list_path%>
+  <% @lists.each do |list|%>
+    <div class="d-flex justify-content-center ml-10 mr-10 ">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://st3.depositphotos.com/1077687/14206/v/450/depositphotos_142063788-stock-illustration-symbol-short-film-icon.jpg)">
+      <%= link_to list.name, list_path(list.id), class: "card-text"%>
+    </div>
+  <% end %>
